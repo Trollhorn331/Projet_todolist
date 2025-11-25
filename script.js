@@ -16,9 +16,14 @@ function renderTasks() {
 
 function addTask() {
     const newTask = taskInput.value;
-    tasks.push(newTask);
-    taskInput.value = "";
-    renderTasks()
+    if (taskInput.value === "") {
+        alert("Veuillez entrer une tâche.")
+        return;
+    } else {
+        tasks.push(newTask);
+        taskInput.value = "";
+        renderTasks()
+    }
 }
 
 taskBtn.addEventListener("click", addTask)
