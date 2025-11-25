@@ -9,7 +9,18 @@ function renderTasks() {
 
     for (let i = 0; i < tasks.length; i++) {
         let li = document.createElement("li");
-        li.textContent = tasks[i];
+
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox"
+        checkbox.checked = tasks[i].done;
+        checkbox.className = "checkbox";
+
+        checkbox.addEventListener("change", function () {
+            tasks[i].done = checkbox.checked;
+        });
+
+        li.textContent = tasks[i].text;
+        li.appendChild(checkbox);
         taskList.appendChild(li);
     }
 }
@@ -20,7 +31,7 @@ function addTask() {
         alert("Veuillez entrer une tâche.")
         return;
     } else {
-        tasks.push(newTask);
+        tasks.push({ text: newTask, done: false });
         taskInput.value = "";
         renderTasks()
     }
