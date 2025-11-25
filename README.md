@@ -7,3 +7,7 @@ Ce projet a pour simple but de créer une to-do list en HTML/CSS/JS.
 ## Roadmap
 
 https://trello.com/b/7YLRl3wN/mon-tableau-trello
+
+## Page du projet
+
+https://trollhorn331.github.io/Projet_todolist/
